@@ -1,14 +1,74 @@
 <ion-header>
-  <ion-navbar>
+  <ion-navbar color="dark-primary-color">
+    <!--Menu Amburguesa -->
+    <button ion-button menuToggle>
+      <ion-icon name="menu"></ion-icon>
+    </button>
     <ion-title>
-      Ionic Blank
+      Galeria de imagenes
     </ion-title>
   </ion-navbar>
 </ion-header>
 
-<ion-content padding>
-  The world is your oyster.
-  <p>
-    If you get lost, the <a href="http://ionicframework.com/docs/v2">docs</a> will be your guide.
-  </p>
+<ion-content class="card-background-page">
+
+  <ion-card>
+    <img [src]="imagen1"/>
+    <div class="card-title">São Paulo</div>
+    <div class="card-subtitle">41 Listings</div>
+  </ion-card>
+
+  <ion-card>
+    <img [src]="imagen2"/>
+    <div class="card-title">Metallica concert</div>
+    <div class="card-subtitle">64 Listings</div>
+  </ion-card>
+
+  <ion-card>
+    <img [src]="imagen3"/>
+    <div class="card-title">San Francisco</div>
+    <div class="card-subtitle">72 Listings</div>
+  </ion-card>
+
+  <ion-card>
+    <img [src]="imagen4"/>
+    <div class="card-title">Madison</div>
+    <div class="card-subtitle">28 Listings</div>
+  </ion-card>
+
+  <ion-card>
+    <img [src]="imagen5"/>
+    <div class="card-title">New Zealand</div>
+    <div class="card-subtitle">54 Listings</div>
+  </ion-card>
+
+  <ion-card>
+    <img [src]="imagen6"/>
+    <div class="card-title">Estonia</div>
+    <div class="card-subtitle">14 Listings</div>
+  </ion-card>
+  <ion-card>
+    <img [src]="imagen7"/>
+    <div class="card-title">Mexico</div>
+    <div class="card-subtitle">45 Listings</div>
+  </ion-card>
+  <ion-card>
+    <img [src]="imagen8"/>
+    <div class="card-title">Islandia</div>
+    <div class="card-subtitle">32 Listings</div>
+  </ion-card>
+  <ion-card>
+    <img [src]="imagen9"/>
+    <div class="card-title">Nuea York</div>
+    <div class="card-subtitle">104 Listings</div>
+  </ion-card>
+  <ion-card>
+    <img [src]="imagen10"/>
+    <div class="card-title">Argentina</div>
+    <div class="card-subtitle">56 Listings</div>
+  </ion-card>
+
+  <!--<button ion-button (click)="showBanner()">Show Banner</button>-->
+  <button ion-button (click)="launchInterstitial()">Show Interstitial</button>
+
 </ion-content>
