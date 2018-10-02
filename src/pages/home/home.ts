@@ -1,6 +1,7 @@
 import { Component } from '@angular/core';
 import { NavController } from 'ionic-angular';
 import {AdMobFree, AdMobFreeBannerConfig, AdMobFreeInterstitialConfig} from "@ionic-native/admob-free";
+import { ToastController } from 'ionic-angular';
 
 @Component({
   selector: 'page-home',
@@ -18,7 +19,7 @@ export class HomePage {
   imagen9 = 'https://i.ytimg.com/vi/qUymCGqV6XA/maxresdefault.jpg';
   imagen10 = 'https://clubdeturismodigital.com/wp-content/uploads/2017/10/cataratas-iguazu.jpg';
 
-  constructor(public navCtrl: NavController, public admob: AdMobFree) {
+  constructor(public navCtrl: NavController, public admob: AdMobFree, public toastCtrl: ToastController) {
 
     this.showBanner();
   }
@@ -55,6 +56,34 @@ export class HomePage {
       // success
     });
 
+  }
+
+  showRewardVideoAds(){
+    const bannerConfig: AdMobFreeBannerConfig = {
+      // id: 'ca-app-pub-6445334843782625~2289223123',
+      isTesting: true,
+      autoShow: true
+    };
+
+    this.admob.rewardVideo.config(bannerConfig);
+
+    this.admob.rewardVideo.prepare()
+      .then(() => {
+        // this.admob.rewardVideo.show();
+        this.mostrat_toast('Successful')
+      })
+      .catch(e => {
+        this.mostrat_toast('error al mostrar video')
+      });
+  }
+
+  mostrat_toast(mensaje: string) {
+    const toast = this.toastCtrl.create({
+      message: mensaje,
+      duration: 3000,
+      position: 'top'
+    });
+    return toast.present();
   }
 
 }
